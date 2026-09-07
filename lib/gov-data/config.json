@@ -1,0 +1,24 @@
+{
+  "name": "gov-data",
+  "version": "1.0.0",
+  "description": "Putnam County Government Data Connector (Sheriff's Dept, Emergency Management, Court Records)",
+  "baseUrl": "https://putnamcountytn.gov",
+  "endpoints": {
+    "pressReleases": "/emergency-management/press-releases",
+    "incidentReports": "/emergency-management/incident-reports",
+    "courtFilingLinks": "/emergency-management/court-filing-links"
+  },
+  "scrapingSchedule": "daily",
+  "dataCategories": [
+    "incident_report",
+    "press_release",
+    "court_document",
+    "public_notice"
+  ],
+  "parsing": {
+    "title": ".release-title, h2, .incident-title",
+    "date": ".release-date, .pubdate, .incident-date",
+    "content": ".release-body, .article-body, .incident-description",
+    "documentLink": "a[href$='.pdf'], a[href$='.doc'], a[href$='.docx']"
+  }
+}
