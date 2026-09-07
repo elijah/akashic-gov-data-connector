@@ -1,9 +1,19 @@
 {
   "name": "akashic-gov-data-connector",
-  "version": "0.1.0",
+  "version": "1.0.0",
   "description": "Government data connector for Akashic - Sheriff Dept, court records, incident reports",
   "private": true,
   "license": "AGPL-3.0-or-later",
+  "main": "index.js",
+  "exports": {
+    ".": "./index.js",
+    "./lib/gov-data": "./lib/gov-data",
+    "./lib/gov-data/types": "./lib/gov-data/types.ts",
+    "./lib/gov-data/index": "./lib/gov-data/index.ts",
+    "./lib/gov-data/mapper": "./lib/gov-data/mapper.ts",
+    "./lib/gov-data/scraper": "./lib/gov-data/scraper.ts",
+    "./lib/gov-data/osm": "./lib/gov-data/osm"
+  },
   "scripts": {
     "test": "jest --config jest.config.js",
     "validate": "npm run validate-connectors"
